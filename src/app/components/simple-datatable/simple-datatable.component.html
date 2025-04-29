@@ -1,11 +1,11 @@
 <table class="table table-bordered table-striped text-wrap">
     <thead>
         <tr class="align-middle text-center small">
-            <th role="button" (click)="sortData('givenName')">First Name</th>
-            <th role="button" (click)="sortData('surName')">Last Name</th>
-            <th role="button" (click)="sortData('age')">Age</th>
-            <th role="button" (click)="sortData('email')">Email</th>
-            <th role="button" (click)="sortData('education')">Education</th>
+            <th role="button" (click)="sortData('givenName')">First Name {{sortSing('givenName')}}</th>
+            <th role="button" (click)="sortData('surName')">Last Name {{sortSing('surName')}}</th>
+            <th role="button" (click)="sortData('age')">Age {{sortSing('age')}}</th>
+            <th role="button" (click)="sortData('email')">Email {{sortSing('email')}}</th>
+            <th role="button" (click)="sortData('education')">Education {{sortSing('education')}}</th>
         </tr>
     </thead>
     <tbody>

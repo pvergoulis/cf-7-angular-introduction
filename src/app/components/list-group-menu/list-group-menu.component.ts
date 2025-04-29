@@ -11,8 +11,11 @@ export class ListGroupMenuComponent {
 
   menu = [
     {text: 'Component Input Example', linkName : 'component-input-example'},
+    {text: 'Component Output Example', linkName: 'component-output-example'},
     {text: '@For Directive Example', linkName : 'for-directive-example'},
     {text: 'Event Bind Example', linkName : 'event-bind-example'},
-    {text: 'Simple Datatable Example', linkName : 'simple-datatable-example'}
+    {text: 'Simple Datatable Example', linkName : 'simple-datatable-example'},
+    {text: 'Template Driven Form Example', linkName: 'template-driven-from-example'}
+    
   ]
 }
