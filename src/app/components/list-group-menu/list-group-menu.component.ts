@@ -15,7 +15,8 @@ export class ListGroupMenuComponent {
     {text: '@For Directive Example', linkName : 'for-directive-example'},
     {text: 'Event Bind Example', linkName : 'event-bind-example'},
     {text: 'Simple Datatable Example', linkName : 'simple-datatable-example'},
-    {text: 'Template Driven Form Example', linkName: 'template-driven-from-example'}
+    {text: 'Template Driven Form Example', linkName: 'template-driven-from-example'},
+    {text: 'Reactive Form Example', linkName: 'reactive-form-example'}
     
   ]
 }
