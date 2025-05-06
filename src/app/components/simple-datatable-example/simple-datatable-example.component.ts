@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component} from '@angular/core';
 import { SimpleDatatableComponent } from '../simple-datatable/simple-datatable.component';
 import { ManyPerson } from 'src/app/shared/interfaces/eperson';
 
