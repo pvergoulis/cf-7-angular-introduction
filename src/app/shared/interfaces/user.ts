@@ -2,7 +2,7 @@ export interface User {
     username : string,
     password: string,
     name: string,
-    surName: string,
+    surname: string,
     email: string,
     address : {
         area: string,
