@@ -10,6 +10,12 @@
         <input type="password" id="password" class="form-control" formControlName="password">
     </div>
 
-    <button class="btn btn-primary rounded w-50 mx-auto" type="submit" [disabled]="form.invalid">Login</button>
+    <button class="btn btn-primary rounded" type="submit" [disabled]="form.invalid">Login</button>
 
 </form>
+
+<div class="mt-2">
+    <button class="btn btn-primary "(click)="googleLogin()">
+        Login with Google
+    </button>
+</div>

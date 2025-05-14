@@ -2,13 +2,15 @@ import { Component, inject } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
 import { User } from 'src/app/shared/interfaces/user';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-user-registration',
-  imports: [MatFormFieldModule, MatInputModule,MatButtonModule,ReactiveFormsModule],
+  imports: [MatFormFieldModule, MatInputModule,MatButtonModule,ReactiveFormsModule, MatSelectModule,MatIconModule ],
   templateUrl: './user-registration.component.html',
   styleUrl: './user-registration.component.css'
 })
@@ -31,6 +33,12 @@ export class UserRegistrationComponent {
       area: new FormControl(''),
       road: new FormControl('')
     }),
+    phone: new FormArray([
+      new FormGroup({
+        number: new FormControl('', Validators.required),
+        type : new FormControl('', Validators.required)
+      })
+    ]),
     password: new FormControl('',[Validators.required, Validators.minLength(5)]),
     confirmPassWord : new FormControl('', [Validators.required, Validators.minLength(5)])
   },
@@ -53,7 +61,24 @@ export class UserRegistrationComponent {
     return null
   }
 
+  phone = this.form.get('phone') as FormArray
+
+  addPhoneNumber(){
+    this.phone.push(
+      new FormGroup({
+        number: new FormControl('', Validators.required),
+        type : new FormControl('', Validators.required)
+      })
+    )
+  }
+
+  removePhoneNumber(index : number){
+    this.phone.removeAt(index)
+  }
+
+
   onSubmit(){
+    console.log(this.form.value)
     // const data = this.form.value as User
     const data : User = {
       'username': this.form.get('username')?.value || '',
